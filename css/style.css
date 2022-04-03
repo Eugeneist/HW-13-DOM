@@ -1,0 +1,50 @@
+body{
+    font: 20px/24px "Verdana", sans-serif;
+    background-color: #4D4D4D;
+    color: #fff;
+    padding: 30px 15px 30px 15px;
+}
+
+#albums{
+    list-style-type: none;
+    counter-reset: item;
+    margin: 0;
+    padding: 0 0 0 50px;
+}
+
+.album_title{
+    position: relative;
+    padding: 0 0 10px 25px;
+}
+
+.album_title:first-letter{
+    font: 20px/24px "Verdana", sans-serif;
+    text-transform: uppercase;
+}
+
+.album_title::before {
+    content: counter(item) "";
+    counter-increment: item; 
+    position: absolute;
+    top: 0;
+    left: -18px;
+}
+
+.album_title::after {
+    content: ".";
+    position: absolute;
+    top: 0;
+    left: -5px;
+}
+
+.album_title:nth-child(n+10)::after{
+    left: 7px;
+}
+
+.album_title:nth-child(n+100)::after{
+    left: 18px;
+}
+
+.album_title:nth-child(n+100){
+    padding: 0 0 0 30px;
+}
